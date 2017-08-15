@@ -27,6 +27,7 @@ namespace ProjetoCliniquinha.Models
 
         public static ApplicationDbContext Create()
         {
+            DbSet<Medico> medicos = 
             return new ApplicationDbContext();
         }
     }

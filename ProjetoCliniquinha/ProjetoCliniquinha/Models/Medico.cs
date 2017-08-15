@@ -5,10 +5,15 @@ using System.Web;
 
 namespace ProjetoCliniquinha.Models
 {
-    public class Medico : Empregado
+    public class Medico : ApplicationUser
     {
         public int IDMedico { get; set; }
+        public string Nome { get; set; }
+        public long RG { get; set; }
+        public long Telefone { get; set; }
+        public string Endereco { get; set; }
         public string Especialidades { get; set; }
         public List<Paciente> ListaPacientes { get; set; }
     }
+
 }
