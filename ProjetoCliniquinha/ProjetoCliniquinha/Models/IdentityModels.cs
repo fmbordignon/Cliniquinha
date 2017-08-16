@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoCliniquinha.Models
 {
@@ -13,22 +14,31 @@ namespace ProjetoCliniquinha.Models
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
+
             return userIdentity;
         }
+        // Add custom user claims here
+        [Display(Name = "Nome")]
+        public string Nome { get; set; }
+        [Display(Name = "RG")]
+        public long RG { get; set; }
+        [Display(Name = "Telefone")]
+        public long Telefone { get; set; }
+        [Display(Name = "Endereço")]
+        public string Endereco { get; set; }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
+    //public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    //{
+    //    public ApplicationDbContext()
+    //        : base("DefaultConnection", throwIfV1Schema: false)
+    //    {
+    //    }
 
-        public static ApplicationDbContext Create()
-        {
-            DbSet<Medico> medicos = 
-            return new ApplicationDbContext();
-        }
-    }
+    //    public static ApplicationDbContext Create()
+    //    {
+    //        DbSet<Medico> medicos = 
+    //        return new ApplicationDbContext();
+    //    }
+}
 }
