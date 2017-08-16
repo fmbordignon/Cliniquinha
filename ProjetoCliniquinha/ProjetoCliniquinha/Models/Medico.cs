@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoCliniquinha.Models
 {
-    public class Medico : ApplicationUser
+    public class Medico
     {
         [Key]
         public int IDMedico { get; set; }
