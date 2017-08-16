@@ -79,6 +79,28 @@ namespace ProjetoCliniquinha.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Nome Completo")]
+        public string Nome { get; set; }
+
+        [Required]
+        [Display(Name = "RG")]
+        public long RG { get; set; }
+        [Display(Name = "Telefone")]
+
+        [Required]
+        public long Telefone { get; set; }
+
+        [Required]
+        [Display(Name = "Endereço")]
+        public string Endereco { get; set; }
+
+        [Required]
+        [Display(Name = "Especialização")]
+        public string Especializacao { get; set; }
+
+        public List<Consulta> ListaConsultas { get; set; }
     }
 
     public class ResetPasswordViewModel
