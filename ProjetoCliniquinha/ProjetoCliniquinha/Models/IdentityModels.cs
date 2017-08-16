@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace ProjetoCliniquinha.Models
 {
@@ -26,6 +27,9 @@ namespace ProjetoCliniquinha.Models
         public long Telefone { get; set; }
         [Display(Name = "Endereço")]
         public string Endereco { get; set; }
+        [Display(Name = "Especialização")]
+        public string Especializacao { get; set; }
+        public List<Consulta> ListaConsultas { get; set; }
     }
 
     //public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
