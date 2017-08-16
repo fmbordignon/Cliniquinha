@@ -151,7 +151,17 @@ namespace ProjetoCliniquinha.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser {
+                    UserName = model.Email,
+                    Email = model.Email
+                };
+
+                user.Nome = model.Nome;
+                user.RG = model.RG;
+                user.Telefone = model.Telefone;
+                user.Endereco = model.Endereco;
+                user.Especializacao = model.Especializacao;
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
