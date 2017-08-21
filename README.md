@@ -10,3 +10,5 @@ Parado no tópico Update the EditUser.cshtml View e o html create ta dando erro 
 https://stackoverflow.com/questions/25884399/aspnetusers-id-as-foreign-key-in-separate-table-one-to-one-relationship
 
 https://stackoverflow.com/questions/42663471/add-primary-key-of-linked-table-to-aspnetusers-table-id-field
+
+https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97
