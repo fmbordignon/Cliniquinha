@@ -29,7 +29,7 @@ namespace ProjetoClinicaV2._0
             {
 
                 // first we create Admin rool   
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                var role = new IdentityRole();
                 role.Name = "Admin";
                 roleManager.Create(role);
 
@@ -54,7 +54,7 @@ namespace ProjetoClinicaV2._0
             // creating Creating Medico role    
             if (!roleManager.RoleExists("Medico"))
             {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                var role = new IdentityRole();
                 role.Name = "Medico";
                 roleManager.Create(role);
 
@@ -63,7 +63,7 @@ namespace ProjetoClinicaV2._0
             // creating Creating Secretaria role    
             if (!roleManager.RoleExists("Secretaria"))
             {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                var role = new IdentityRole();
                 role.Name = "Secretaria";
                 roleManager.Create(role);
 

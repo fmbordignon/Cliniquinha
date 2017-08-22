@@ -10,6 +10,7 @@ namespace ProjetoClinicaV2._0.Models
     public class ApplicationUser : IdentityUser
     {
         public virtual Medico Medico { get; set; }
+        public virtual Paciente Paciente { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Observe que o authenticationType deve corresponder àquele definido em CookieAuthenticationOptions.AuthenticationType
@@ -25,10 +26,11 @@ namespace ProjetoClinicaV2._0.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        public DbSet<Medico> Medico { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Medico> Medico { get; set; }
+        public DbSet<Paciente> Paciente { get; set; }
     }
 }
