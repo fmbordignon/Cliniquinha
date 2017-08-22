@@ -29,7 +29,7 @@ namespace ProjetoCliniquinha.Models
         public string Endereco { get; set; }
         [Display(Name = "Especialização")]
         public string Especializacao { get; set; }
-        public List<Consulta> ListaConsultas { get; set; }
+
     }
 
     //public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -44,5 +44,4 @@ namespace ProjetoCliniquinha.Models
     //        DbSet<Medico> medicos = 
     //        return new ApplicationDbContext();
     //    }
-}
 }
