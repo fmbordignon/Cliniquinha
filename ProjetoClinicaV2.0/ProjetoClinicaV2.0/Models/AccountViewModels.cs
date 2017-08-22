@@ -70,7 +70,7 @@ namespace ProjetoClinicaV2._0.Models
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Especiliazação")]
+        [Display(Name = "Especialização")]
         public string Especializacao { get; set; }
 
         [Required]
@@ -86,7 +86,7 @@ namespace ProjetoClinicaV2._0.Models
 
         // I modify the model so that we could set the role of the register user
         [Required]
-        [Display(Name = "User Role")]
+        [Display(Name = "Tipo de Usuários")]
         public string UserRoles { get; set; }
     }
 
