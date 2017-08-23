@@ -18,6 +18,8 @@ namespace ProjetoClinicaV2._0.Models
         public long Telefone { get; set; }
         [Required]
         public string Endereco { get; set; }
+
+        public int IDMedico { get; set; }
         public virtual Medico Medico { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -40,5 +42,6 @@ namespace ProjetoClinicaV2._0.Models
         }
         public DbSet<Medico> Medico { get; set; }
         public DbSet<Paciente> Paciente { get; set; }
+        public DbSet<Consulta> Consultas { get; set; }
     }
 }

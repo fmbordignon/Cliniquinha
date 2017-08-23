@@ -19,6 +19,6 @@ namespace ProjetoClinicaV2._0.Models
         [Display(Name = "Data de nascimento")]
         [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
-        public List<Consulta> ListaConsultas { get; set; }
+        public List<Consulta> Consultas { get; set; }
     }
 }

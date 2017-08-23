@@ -38,7 +38,8 @@ namespace ProjetoClinicaV2._0.Controllers
         // GET: Consultas/Create
         public ActionResult Create()
         {
-            ViewBag.Pacientes = new SelectList(db.Paciente.Select(u => u.Nome).ToList(), "Name", "Name");
+            ViewBag.Pacientes = new SelectList(db.Paciente, "IDPaciente", "Nome");
+            ViewBag.Medicos = new SelectList(db.Users.Where(u => u.Medico != null), "IDMedico", "Nome");
             return View();
         }
 
@@ -47,17 +48,17 @@ namespace ProjetoClinicaV2._0.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDConsulta,PlanoDeSaude,DataConsulta")] Consulta consulta)
+        public ActionResult Create([Bind(Include = "IDConsulta,PlanoDeSaude,DataConsulta,IDMedico,IDPaciente")] Consulta consulta)
         {
             if (ModelState.IsValid)
             {
                 db.Consultas.Add(consulta);
                 db.SaveChanges();
-                ViewBag.Pacientes = new SelectList(db.Paciente.Select(u => u.Nome).ToList(), "Name", "Name");
-                //ViewBag.Medicos = new SelectList(db.Users.Where(u => u.Medico != null).Select(u => u.Nome).ToList(), "Name", "Name");
                 return RedirectToAction("Index");
             }
 
+                ViewBag.Pacientes = new SelectList(db.Paciente, "IDPaciente", "Nome", consulta.IDPaciente);
+                ViewBag.Medicos = new SelectList(db.Users.Where(u => u.Medico != null), "IDMedico", "Nome", consulta.IDMedico);
             return View(consulta);
         }
 

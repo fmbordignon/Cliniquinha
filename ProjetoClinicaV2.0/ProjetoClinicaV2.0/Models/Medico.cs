@@ -10,6 +10,6 @@ namespace ProjetoClinicaV2._0.Models
         [Key]
         public int IDMedico { get; set; }
         public string Especilizacao { get; set; }
-        public List<Consulta> ListaConsultas { get; set; }
+        public List<Consulta> Consultas { get; set; }
     }
 }
