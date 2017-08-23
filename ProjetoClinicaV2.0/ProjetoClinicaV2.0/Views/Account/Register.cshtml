@@ -17,8 +17,7 @@
         @Html.LabelFor(m => m.UserRoles, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @*@Html.DropDownList("Name")*@
-            @Html.DropDownList("UserRoles", (SelectList)ViewBag.Name, "Selecione")
-            <br />
+            @Html.DropDownList("UserRoles", (SelectList)ViewBag.Name, "Selecione", new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.UserRoles, "", new { @class = "text-danger" })
         </div>
     </div>
