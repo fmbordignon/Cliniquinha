@@ -32,5 +32,7 @@ namespace ProjetoClinicaV2._0.Models
         }
         public DbSet<Medico> Medico { get; set; }
         public DbSet<Paciente> Paciente { get; set; }
+        public DbSet<Consulta> Consultas { get; set; }
+
     }
 }

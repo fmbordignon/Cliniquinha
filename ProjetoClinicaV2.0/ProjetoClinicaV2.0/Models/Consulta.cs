@@ -12,5 +12,6 @@ namespace ProjetoClinicaV2._0.Models
         public int IDConsulta { get; set; }
         public string PlanoDeSaude { get; set; }
         public DateTime DataConsulta { get; set; }
+        
     }
 }
