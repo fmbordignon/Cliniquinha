@@ -64,6 +64,16 @@ namespace ProjetoClinicaV2._0.Models
 
     public class RegisterViewModel
     {
+
+        [Required]
+        public string Nome { get; set; }
+        [Required]
+        public long Rg { get; set; }
+        [Required]
+        public long Telefone { get; set; }
+        [Required]
+        public string Endereco { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
