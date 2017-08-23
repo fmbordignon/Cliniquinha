@@ -153,7 +153,15 @@ namespace ProjetoClinicaV2._0.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    Nome = model.Nome,
+                    Rg = model.Rg,
+                    Telefone = model.Telefone,
+                    Endereco = model.Endereco               
+                    
+                };
                 if (model.UserRoles.Equals("Medico"))
                 {
                     user.Medico = new Medico { Especilizacao = model.Especializacao };
