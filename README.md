@@ -12,3 +12,6 @@ https://stackoverflow.com/questions/25884399/aspnetusers-id-as-foreign-key-in-se
 https://stackoverflow.com/questions/42663471/add-primary-key-of-linked-table-to-aspnetusers-table-id-field
 
 https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97
+
+
+https://stackoverflow.com/questions/42163390/can-i-create-multiple-identity-tables-in-asp-net-mvc&usg=ALkJrhidAFUUFD-qn-UMggZ7q6ZKdmw6_A
