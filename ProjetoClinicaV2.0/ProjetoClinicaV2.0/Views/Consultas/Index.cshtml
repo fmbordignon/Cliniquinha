@@ -12,16 +12,16 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Medico.Especilizacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paciente.Nome)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.PlanoDeSaude)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DataConsulta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IDMedico)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IDPaciente)
         </th>
         <th></th>
     </tr>
@@ -29,16 +29,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Medico.Especilizacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paciente.Nome)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.PlanoDeSaude)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DataConsulta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IDMedico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IDPaciente)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.IDConsulta }) |
