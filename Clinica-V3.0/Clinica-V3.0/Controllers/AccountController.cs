@@ -156,11 +156,26 @@ namespace Clinica_V3._0.Controllers
             {
                 
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                if (model.UserRoles.Equals("Medico"))
+                if (model.UserRoles.ToLower().Equals("medico"))
                 {
-                    user.Medico = new Medico { Nome = model.Nome };
+                    user.Medico = new Medico {
+                        Nome = model.Nome,
+                        Rg = model.Rg,
+                        Telefone = model.Telefone,
+                        Endereco = model.Endereco,
+                        Especilizacao = model.Especilizacao
+                    };
+                }else if (model.UserRoles.ToLower().Equals("secretaria"))
+                {
+                    user.Secretaria = new Secretaria
+                    {
+                        Nome = model.Nome,
+                        Rg = model.Rg,
+                        Telefone = model.Telefone,
+                        Endereco = model.Endereco
+                    };
                 }
-                var result = await UserManager.CreateAsync(user, model.Password);
+                    var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
