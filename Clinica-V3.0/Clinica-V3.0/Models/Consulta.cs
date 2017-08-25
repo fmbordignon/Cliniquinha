@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -19,7 +20,9 @@ namespace Clinica_V3._0.Models
         [DisplayName("Paciente")]
         public int IDPaciente { get; set; }
         public virtual Paciente Paciente { get; set; }
-        public int IDMedico { get; set; }
+        [ForeignKey("Medico")]
+        public string IDMedico { get; set; }
+        [DisplayName("Médico")]
         public virtual Medico Medico { get; set; }
     }
 }
