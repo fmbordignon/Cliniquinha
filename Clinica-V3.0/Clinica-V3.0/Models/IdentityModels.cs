@@ -10,6 +10,7 @@ namespace Clinica_V3._0.Models
     public class ApplicationUser : IdentityUser
     {
         public virtual Medico Medico { get; set; }
+        public virtual Secretaria Secretaria { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Observe que o authenticationType deve corresponder àquele definido em CookieAuthenticationOptions.AuthenticationType
@@ -27,6 +28,9 @@ namespace Clinica_V3._0.Models
         }
 
         public DbSet<Medico> Medico { get; set; }
+        public DbSet<Secretaria> Secretaria { get; set; }
+        public DbSet<Paciente> Paciente { get; set; }
+        public DbSet<Consulta> Consultas { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
