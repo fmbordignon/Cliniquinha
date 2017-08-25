@@ -10,7 +10,6 @@
     @Html.AntiForgeryToken()
     <h4>Crie uma nova conta.</h4>
     <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
 
     <div class="form-group">
         @Html.LabelFor(m => m.UserRoles, new { @class = "col-md-2 control-label" })
@@ -18,13 +17,7 @@
             @*@Html.DropDownList("Name")*@
             @Html.DropDownList("UserRoles", (SelectList)ViewBag.Name, "Selecione", new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.UserRoles, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.UserRoles, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -32,6 +25,49 @@
         @Html.LabelFor(m => m.Nome, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Especilizacao, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Especilizacao, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Especilizacao, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Rg, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Rg, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Rg, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Telefone, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Telefone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Telefone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Endereco, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Endereco, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Endereco, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -39,6 +75,7 @@
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
