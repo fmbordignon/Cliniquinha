@@ -16,8 +16,10 @@ namespace Clinica_V3._0.Models
         [Required]
         public long Rg { get; set; }
         [Required]
+        [Display(Name = "Telefone/Celular")]
         public long Telefone { get; set; }
         [Required]
+        [Display(Name = "Endereço")]
         public string Endereco { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
     }

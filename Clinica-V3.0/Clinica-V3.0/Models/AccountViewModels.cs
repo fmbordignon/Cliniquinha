@@ -80,18 +80,21 @@ namespace Clinica_V3._0.Models
         [Compare("Password", ErrorMessage = "A senha e a senha de confirmação não correspondem.")]
         public string ConfirmPassword { get; set; }
 
-        public string Nome { get; set; }
-
         // I modify the model so that we could set the role of the register user
         [Required]
         [Display(Name = "Tipo de Usuário")]
         public string UserRoles { get; set; }
         [Required]
+        public string Nome { get; set; }
+        [Required]
         public long Rg { get; set; }
         [Required]
+        [Display(Name = "Telefone/Celular")]
         public long Telefone { get; set; }
         [Required]
+        [Display(Name = "Endereço")]
         public string Endereco { get; set; }
+        [Display(Name = "Especialização")]
         public string Especilizacao { get; set; }
     }
 
