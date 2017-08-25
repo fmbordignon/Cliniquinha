@@ -86,6 +86,13 @@ namespace Clinica_V3._0.Models
         [Required]
         [Display(Name = "Tipo de Usuário")]
         public string UserRoles { get; set; }
+        [Required]
+        public long Rg { get; set; }
+        [Required]
+        public long Telefone { get; set; }
+        [Required]
+        public string Endereco { get; set; }
+        public string Especilizacao { get; set; }
     }
 
     public class ResetPasswordViewModel
