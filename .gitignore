@@ -1,2 +1,9 @@
-
-ProjetoClinicaV2.0/.vs/config/applicationhost.config
+Clinica-V3.0/.vs
+Clinica-V3.0/Clinica-V3.0/App_Data/*.mdf
+Clinica-V3.0/Clinica-V3.0/App_Data/*.ldf
+Clinica-V3.0/Clinica-V3.0/bin/Clinica-V3.0.dll
+Clinica-V3.0/Clinica-V3.0/bin/Clinica-V3.0.pdb
+Clinica-V3.0/Clinica-V3.0/obj/Debug/Clinica-V3.0.dll
+Clinica-V3.0/Clinica-V3.0/obj/Debug/Clinica-V3.0.pdb
+Clinica-V3.0/Clinica-V3.0/obj/Debug/CoreCompileInputs.cache
+Clinica-V3.0/Clinica-V3.0/Clinica-V3.0.csproj
