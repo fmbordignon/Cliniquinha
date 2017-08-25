@@ -11,7 +11,16 @@ namespace Clinica_V3._0.Models
     {
         [Key, ForeignKey("ApplicationUser")]
         public string UserId { get; set; }
+        [Required]
         public string Nome { get; set; }
+        [Required]
+        public long Rg { get; set; }
+        [Required]
+        public long Telefone { get; set; }
+        [Required]
+        public string Endereco { get; set; }
+        public string Especilizacao { get; set; }
+        public List<Consulta> ListaConsultas { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
     }
 }
