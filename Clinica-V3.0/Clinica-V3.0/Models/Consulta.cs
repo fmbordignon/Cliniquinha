@@ -15,7 +15,7 @@ namespace Clinica_V3._0.Models
         [Display(Name = "Plano de saude")]
         public string PlanoDeSaude { get; set; }
         [Display(Name = "Data da Consulta")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         public DateTime DataConsulta { get; set; }
         [DisplayName("Paciente")]
         public int IDPaciente { get; set; }
