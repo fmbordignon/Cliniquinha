@@ -15,9 +15,24 @@ namespace Clinica_V3._0.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Consultas
-        public ActionResult Index()
+        public ActionResult Index(string stringPaciente,string stringMedico, string stringPlanoSaude)
         {
             var consultas = db.Consultas.Include(c => c.Paciente);
+            if (!String.IsNullOrEmpty(stringPaciente))
+            {
+                consultas = consultas.Where(s => s.Paciente.Nome.Contains(stringPaciente));
+            }
+
+            if (!String.IsNullOrEmpty(stringMedico))
+            {
+                consultas = consultas.Where(s => s.Medico.Nome.Contains(stringMedico));
+            }
+
+            if (!String.IsNullOrEmpty(stringPlanoSaude))
+            {
+                consultas = consultas.Where(s => s.PlanoDeSaude.Contains(stringPlanoSaude));
+            }
+
             return View(consultas.ToList());
         }
 
@@ -129,6 +144,27 @@ namespace Clinica_V3._0.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult PacienteFilter(string term)
+        {
+            term = term.ToLower();
+            var list = db.Consultas.Where(x => x.Paciente.Nome.ToLower().Contains(term)).Select(x => x.Paciente.Nome).Distinct();
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult MedicoFilter(string term)
+        {
+            term = term.ToLower();
+            var list = db.Consultas.Where(x => x.Medico.Nome.ToLower().Contains(term)).Select(x => x.Medico.Nome).Distinct();
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult PlanoSaudeFilter(string term)
+        {
+            term = term.ToLower();
+            var list = db.Consultas.Where(x => x.PlanoDeSaude.ToLower().Contains(term)).Select(x => x.PlanoDeSaude).Distinct();
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
     }
 }
