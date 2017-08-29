@@ -13,7 +13,7 @@ namespace Clinica_V3._0.Models
         [Display(Name = "Nome")]
         public string Nome { get; set; }
         [Display(Name = "Telefone")]
-        public long Telefone { get; set; }
+        public string Telefone { get; set; }
         [Display(Name = "Endereço")]
         public string Endereco { get; set; }
         [Display(Name = "Data de nascimento")]
