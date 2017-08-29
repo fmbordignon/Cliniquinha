@@ -20,9 +20,9 @@ namespace Clinica_V3._0.Models
         [DisplayName("Paciente")]
         public int IDPaciente { get; set; }
         public virtual Paciente Paciente { get; set; }
+        [DisplayName("Médico")]
         [ForeignKey("Medico")]
         public string IDMedico { get; set; }
-        [DisplayName("Médico")]
         public virtual Medico Medico { get; set; }
     }
 }
