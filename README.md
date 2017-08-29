@@ -18,9 +18,9 @@ https://stackoverflow.com/questions/42163390/can-i-create-multiple-identity-tabl
 
 - Validar Especialização no Front (register.cs)
 - Adicionar mascarar na consulta (Data, hora)
-- Adicionar Required na consulta
+- ~~Adicionar Required na consulta~~
 - ~~Opção de Criar paciente remover os campos de endereço e data de nascimento~~ 
-- ~~Required Paciente ~~
+- ~~Required Paciente~~
 - ~~Criar filtro no Paciente~~
 - ~~Trocar a label do medico na Consulta~~
 - Validar consulta com a data
