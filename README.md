@@ -22,7 +22,7 @@ https://stackoverflow.com/questions/42163390/can-i-create-multiple-identity-tabl
 - Opção de Criar paciente remover os campos de endereço e data de nascimento
 - Required Paciente
 - Criar filtro no Paciente
-- <u>Trocar a label do medico na Consulta<u\>
+- ~~Trocar a label do medico na Consulta~~
 - Validar consulta com a data
 
 - O paciente pode desmarcar uma consulta previamente agendada. Caso a consulta seja desmarcada antes de sua data prevista, ela é excluída. Se o paciente não comparecer à consulta, a consulta fica registrada no sistema como sendo uma consulta sem comparecimento. 
