@@ -25,7 +25,7 @@ namespace Clinica_V3._0.Controllers
 
             if (!String.IsNullOrEmpty(stringTelefone))
             {
-                pacientes = pacientes.Where(s => s.Telefone.Contains(stringTelefone)).Select(x => x).ToList();
+                pacientes = pacientes.Where(s => s.Telefone.Contains(stringTelefone)).Select(x => x).ToList(); 
             }
 
             return View(pacientes);
@@ -57,7 +57,7 @@ namespace Clinica_V3._0.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDPaciente,Nome,Telefone,Endereco,DataNascimento")] Paciente paciente)
+        public ActionResult Create([Bind(Include = "IDPaciente,Nome,Telefone")] Paciente paciente)
         {
             if (ModelState.IsValid)
             {
