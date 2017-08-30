@@ -13,6 +13,7 @@ https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97
 
 https://stackoverflow.com/questions/42163390/can-i-create-multiple-identity-tables-in-asp-net-mvc&usg=ALkJrhidAFUUFD-qn-UMggZ7q6ZKdmw6_A
 
+https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 
 # O que falta fazer (28/08)
 
