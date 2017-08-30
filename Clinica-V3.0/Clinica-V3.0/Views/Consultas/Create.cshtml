@@ -24,10 +24,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DataConsulta, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DataConsulta, htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DataConsulta, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DataConsulta, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.DataConsulta, new { htmlAttributes = new { @class = "form-control"} })
+                @Html.ValidationMessageFor(model => model.DataConsulta, "", new { @class = "text-danger"})
             </div>
         </div>
 
@@ -68,4 +68,6 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/ScriptsClinica/Mascaras.js")
+    @Scripts.Render("~/bundles/inputmask");
 }

@@ -12,17 +12,21 @@ namespace Clinica_V3._0.Models
     {
         [Key]
         public int IDConsulta { get; set; }
+        [Required]
         [Display(Name = "Plano de saude")]
         public string PlanoDeSaude { get; set; }
+        [Required]
         [Display(Name = "Data da Consulta")]
         [DataType(DataType.DateTime)]
         public DateTime DataConsulta { get; set; }
+        [Required]
         [DisplayName("Paciente")]
         public int IDPaciente { get; set; }
         public virtual Paciente Paciente { get; set; }
+        [Required]
+        [DisplayName("Médico")]
         [ForeignKey("Medico")]
         public string IDMedico { get; set; }
-        [DisplayName("Médico")]
         public virtual Medico Medico { get; set; }
     }
 }

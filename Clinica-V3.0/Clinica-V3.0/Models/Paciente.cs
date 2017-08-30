@@ -10,15 +10,17 @@ namespace Clinica_V3._0.Models
     {
         [Key]
         public int IDPaciente { get; set; }
+        [Required]
         [Display(Name = "Nome")]
         public string Nome { get; set; }
         [Display(Name = "Telefone")]
-        public long Telefone { get; set; }
+        [Required]
+        public string Telefone { get; set; }
         [Display(Name = "Endereço")]
         public string Endereco { get; set; }
         [Display(Name = "Data de nascimento")]
         [DataType(DataType.Date)]
-        public DateTime DataNascimento { get; set; }
+        public DateTime? DataNascimento { get; set; }
         public List<Consulta> ListaConsultas { get; set; }
     }
 }

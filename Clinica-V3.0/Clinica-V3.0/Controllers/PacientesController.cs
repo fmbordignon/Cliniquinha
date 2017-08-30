@@ -15,9 +15,20 @@ namespace Clinica_V3._0.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Pacientes
-        public ActionResult Index()
+        public ActionResult Index(string stringNome, string stringTelefone)
         {
-            return View(db.Paciente.ToList());
+            var pacientes = db.Paciente.ToList();
+            if (!String.IsNullOrEmpty(stringNome))
+            {
+                pacientes = pacientes.Where(s => s.Nome.Contains(stringNome)).Select(x => x).ToList();
+            }
+
+            if (!String.IsNullOrEmpty(stringTelefone))
+            {
+                pacientes = pacientes.Where(s => s.Telefone.Contains(stringTelefone)).Select(x => x).ToList(); 
+            }
+
+            return View(pacientes);
         }
 
         // GET: Pacientes/Details/5
@@ -46,7 +57,7 @@ namespace Clinica_V3._0.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDPaciente,Nome,Telefone,Endereco,DataNascimento")] Paciente paciente)
+        public ActionResult Create([Bind(Include = "IDPaciente,Nome,Telefone")] Paciente paciente)
         {
             if (ModelState.IsValid)
             {
@@ -122,6 +133,20 @@ namespace Clinica_V3._0.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult NomeFilter(string term)
+        {
+            term = term.ToLower();
+            var list = db.Paciente.Where(x => x.Nome.ToLower().Contains(term)).Select(x => x.Nome).Distinct();
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult TelefoneFilter(string term)
+        {
+            term = term.ToLower();
+            var list = db.Paciente.Where(x => x.Telefone.ToLower().Contains(term)).Select(x => x.Telefone).Distinct();
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
     }
 }

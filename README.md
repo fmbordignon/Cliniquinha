@@ -1,6 +1,6 @@
 Ela moide :3
 
-# Links Útes
+# Links Úteis
 
 http://www.eduardopires.net.br/2014/03/asp-net-identity-customizando-cadastro-usuarios/
 https://www.codeproject.com/Articles/790720/ASP-NET-Identity-Customizing-Users-and-Roles
@@ -13,17 +13,18 @@ https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97
 
 https://stackoverflow.com/questions/42163390/can-i-create-multiple-identity-tables-in-asp-net-mvc&usg=ALkJrhidAFUUFD-qn-UMggZ7q6ZKdmw6_A
 
+https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 
 # O que falta fazer (28/08)
 
 - Validar Especialização no Front (register.cs)
 - Adicionar mascarar na consulta (Data, hora)
-- Adicionar Required na consulta
-- Opção de Criar paciente remover os campos de endereço e data de nascimento
-- Required Paciente
-- Criar filtro no Paciente
-- Trocar a label do medico na Consulta
-- Validar consulta com a data
+- ~~Adicionar Required na consulta~~
+- ~~Opção de Criar paciente remover os campos de endereço e data de nascimento~~ 
+- ~~Required Paciente~~
+- ~~Criar filtro no Paciente~~
+- ~~Trocar a label do medico na Consulta~~
+- ~~Validar consulta com a data~~
 
 - O paciente pode desmarcar uma consulta previamente agendada. Caso a consulta seja desmarcada antes de sua data prevista, ela é excluída. Se o paciente não comparecer à consulta, a consulta fica registrada no sistema como sendo uma consulta sem comparecimento. 
 
