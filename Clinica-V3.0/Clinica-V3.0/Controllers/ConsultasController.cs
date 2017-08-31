@@ -71,20 +71,25 @@ namespace Clinica_V3._0.Controllers
                 ModelState.AddModelError("DataConsulta", "A data da consulta deve ser maior ou igual a Hoje.");
             }
 
-            string[] array = hora.Split(':');
-
-            DateTime novaData = new DateTime(consulta.DataConsulta.Year, consulta.DataConsulta.Month, consulta.DataConsulta.Day, int.Parse(array[0]), int.Parse(array[1]), 00);
-            var nomeMedico = db.Medico.Find(consulta.IDMedico).Nome;
-            var consultaNoMesmoHorario = db.Consultas.Any(x => DateTime.Compare(x.DataConsulta, novaData) == 0 && x.Medico.Nome.Equals(nomeMedico));
-            if (consultaNoMesmoHorario)
+            if (hora == "")
             {
-                ModelState.AddModelError("DataConsulta", "Já existe consulta neste mesmo Horário.");
+                ModelState.AddModelError("Hora", "Insira uma hora válida");
+            }
+            else
+            {
+                string[] array = hora.Split(':');
+                DateTime novaData = new DateTime(consulta.DataConsulta.Year, consulta.DataConsulta.Month, consulta.DataConsulta.Day, int.Parse(array[0]), int.Parse(array[1]), 00);
+                consulta.DataConsulta = novaData;
+                var nomeMedico = db.Medico.Find(consulta.IDMedico).Nome;
+                var consultaNoMesmoHorario = db.Consultas.Any(x => DateTime.Compare(x.DataConsulta, novaData) == 0 && x.Medico.Nome.Equals(nomeMedico));
+                if (consultaNoMesmoHorario)
+                {
+                    ModelState.AddModelError("DataConsulta", "Já existe consulta neste mesmo Horário.");
+                }
             }
 
             if (ModelState.IsValid)
             {
-               
-                consulta.DataConsulta = novaData;
                 db.Consultas.Add(consulta);
                 db.SaveChanges();
                 return RedirectToAction("Index");
