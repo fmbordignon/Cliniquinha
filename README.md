@@ -25,6 +25,7 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 - ~~Criar filtro no Paciente~~
 - ~~Trocar a label do medico na Consulta~~
 - ~~Validar consulta com a data~~
+- Fazer o campo da data ser 2 strings que depois irão entrar no objeto DateTime
 
 - O paciente pode desmarcar uma consulta previamente agendada. Caso a consulta seja desmarcada antes de sua data prevista, ela é excluída. Se o paciente não comparecer à consulta, a consulta fica registrada no sistema como sendo uma consulta sem comparecimento. 
 
