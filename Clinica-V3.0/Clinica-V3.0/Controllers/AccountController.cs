@@ -163,7 +163,7 @@ namespace Clinica_V3._0.Controllers
                         Rg = model.Rg,
                         Telefone = model.Telefone,
                         Endereco = model.Endereco,
-                        Especilizacao = model.Especilizacao
+                        Especilizacao = model.Especializacao
                     };
                 }else if (model.UserRoles.ToLower().Equals("secretaria"))
                 {

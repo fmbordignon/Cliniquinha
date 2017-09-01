@@ -95,7 +95,7 @@ namespace Clinica_V3._0.Models
         [Display(Name = "Endereço")]
         public string Endereco { get; set; }
         [Display(Name = "Especialização")]
-        public string Especilizacao { get; set; }
+        public string Especializacao { get; set; }
     }
 
     public class ResetPasswordViewModel
