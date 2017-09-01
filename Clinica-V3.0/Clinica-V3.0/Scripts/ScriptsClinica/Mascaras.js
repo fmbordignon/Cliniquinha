@@ -3,5 +3,13 @@
                         
     Inputmask({ regex: "\^([0-2][0-9]|3[0-1])\/(0[0-9]|1[0-2])\/(2017)\$" }).mask("#DataConsulta");
 
-    Inputmask({ regex: "\\(([0-5][0-9])\\)(3[0-9]{3}|9[0-9]{4})\-([0-9]{4})\$" }).mask("#Telefone");
+    Inputmask({ regex: "\^\\(([0-5][0-9])\\)(3[0-9]{3})|(9[0-9]{4})\-([0-9]{4})\$" }).mask("#Telefone");
+
+    Inputmask({ regex: "\^([A-z]+)(?: [A-z]+)+\$" }).mask("#Nome, #PlanoDeSaude");
+
+    Inputmask({ regex: "\^\[0-9]{10}\$" }).mask("#Rg");
+
+    $("#Nome, #PlanoDeSaude, #Rg").inputmask({ "placeholder": ""});
+
+
 });
