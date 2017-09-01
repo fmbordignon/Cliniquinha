@@ -16,8 +16,8 @@ namespace Clinica_V3._0.Models
         [Display(Name = "Plano de saude")]
         public string PlanoDeSaude { get; set; }
         [Required]
+        [DataType(DataType.DateTime)]
         [Display(Name = "Data da Consulta")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataConsulta { get; set; }
         [Required]
         [DisplayName("Paciente")]

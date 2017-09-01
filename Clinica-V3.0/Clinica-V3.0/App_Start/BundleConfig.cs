@@ -31,6 +31,18 @@ namespace Clinica_V3._0
             bundles.Add(new StyleBundle("~/Content/jqueryui")
             .Include("~/Content/themes/base/all.css"));
 
+
+            var bundle = new ScriptBundle("~/bundles/jqueryval") { Orderer = new AsIsBundleOrderer() };
+
+            bundle
+                .Include("~/Scripts/jquery.unobtrusive-ajax.js")
+                .Include("~/Scripts/jquery.validate-vsdoc.js")
+                .Include("~/Scripts/jquery.validate.js")
+                .Include("~/Scripts/jquery.validate.unobtrusive.js")
+                .Include("~/Scripts/globalize.js")
+                .Include("~/Scripts/jquery.validate.globalize.js");
+            bundles.Add(bundle);
+
             bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
             //~/Scripts/Inputmask/dependencyLibs/inputmask.dependencyLib.js",  //if not using jquery
             "~/Scripts/Inputmask/inputmask.js",
