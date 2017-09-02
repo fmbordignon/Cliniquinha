@@ -49,7 +49,9 @@
 
                 'Email': {
                     required: true,
-                    email: true
+                    email: true,
+                    remote: '/Account/UserAlreadyExistsAsync'
+                                         
                 },
 
                 'Password': {
@@ -90,7 +92,8 @@
 
                 'Email': {
                     required: 'O campo Email é obrigatório.',
-                    email: 'O campo Email não é um endereço de email válido.'
+                    email: 'O campo Email não é um endereço de email válido.',
+                    remote: 'Email já cadastrado.'
                 },
 
                 'Password': {
