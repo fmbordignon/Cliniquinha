@@ -3,6 +3,7 @@
         $('#form-group-especializacao').fadeIn();
     } else {
         $('#form-group-especializacao').fadeOut();
+        $('#Especializacao').val('');
     }
 });
 
@@ -27,20 +28,84 @@
                 },  
       
                 'Especializacao': {  
+                    required: {
+                        depends: function () {
+                            return ($("#UserRoles").val() == "Medico");
+                        }
+                    }
+                },
+
+                'Nome': {
+                    required:true
+                },
+
+                'Telefone': {
+                    required:true
+                },
+
+                'Endereco': {
                     required: true
-                }  
+                },
+
+                'Email': {
+                    required: true,
+                    email: true,
+                    remote: '/Account/UserAlreadyExistsAsync'
+                                         
+                },
+
+                'Password': {
+                    required: true,
+                    minlength: 6
+                },
+
+                 'ConfirmPassword': {
+                    required: true,
+                    equalTo: "#Password"
+                }
+
             },  
             messages: {  
                 'Rg': {
-                    required: 'Please provide a password'  
+                    required: 'O campo Rg é obrigatório.'  
                  },
                 'UserRoles': {  
-                    required: 'Please provide a password'  
+                    required: 'O campo Tipo de Usuário é obrigatório.'  
                 }, 
       
                 'Especializacao': {  
-                    required: 'Please provide a password'
-                }  
+                    required: 'O campo Especialização é obrigatório.'
+                },
+
+                'Nome': {
+                    required: 'O campo Nome é obrigatório.'
+                },
+
+                'Telefone': {
+                    required: 'O campo Telefone/ Celular é obrigatório.'
+                },
+
+                'Endereco': {
+                    required: 'O campo Endereço é obrigatório.'
+
+                },
+
+                'Email': {
+                    required: 'O campo Email é obrigatório.',
+                    email: 'O campo Email não é um endereço de email válido.',
+                    remote: 'Email já cadastrado.'
+                },
+
+                'Password': {
+                    required: 'O campo Senha é obrigatório.',
+                    minlength: 'A Senha deve ter no mínimo 6 caracteres.'
+                },
+                 'ConfirmPassword': {
+                     required: 'O campo Confirmar Senha é obrigatório.',
+                    equalTo: 'As senhas devem ser iguais.'
+                }
+
+
             }  
         });  
     });   

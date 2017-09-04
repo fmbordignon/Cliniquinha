@@ -22,6 +22,12 @@ namespace Clinica_V3._0.Controllers
         public AccountController()
         {
         }
+        [AllowAnonymous]
+        public async Task<JsonResult> UserAlreadyExistsAsync(string email)
+        {
+            var result = await UserManager.FindByEmailAsync(email);
+            return Json(result == null, JsonRequestBehavior.AllowGet);
+        }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
