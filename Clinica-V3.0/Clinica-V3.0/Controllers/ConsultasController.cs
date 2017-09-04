@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Clinica_V3._0.Models;
+using System.Data.Entity.Core.Objects;
 
 namespace Clinica_V3._0.Controllers
 {
@@ -81,7 +80,7 @@ namespace Clinica_V3._0.Controllers
                 DateTime novaData = new DateTime(consulta.DataConsulta.Year, consulta.DataConsulta.Month, consulta.DataConsulta.Day, int.Parse(array[0]), int.Parse(array[1]), 00);
                 consulta.DataConsulta = novaData;
                 var nomeMedico = db.Medico.Find(consulta.IDMedico).Nome;
-                var consultaNoMesmoHorario = db.Consultas.Any(x => DateTime.Compare(x.DataConsulta, novaData) == 0 && x.Medico.Nome.Equals(nomeMedico));
+                var consultaNoMesmoHorario = this.consultaMesmoHorario(novaData, nomeMedico);
                 if (consultaNoMesmoHorario)
                 {
                     ModelState.AddModelError("DataConsulta", "Já existe consulta neste mesmo Horário.");
@@ -100,6 +99,28 @@ namespace Clinica_V3._0.Controllers
             return View(consulta);
         }
 
+
+        private bool consultaMesmoHorario(DateTime novaData, string nomeMedico)
+        {
+            foreach (Consulta cons in db.Consultas)
+            {
+                System.Diagnostics.Debug.WriteLine(cons.DataConsulta);
+                System.Diagnostics.Debug.WriteLine(novaData);
+                System.Diagnostics.Debug.WriteLine(cons.DataConsulta.AddMinutes(30));
+                System.Diagnostics.Debug.WriteLine(novaData >= cons.DataConsulta);
+                System.Diagnostics.Debug.WriteLine(novaData <= cons.DataConsulta.AddMinutes(30));
+                System.Diagnostics.Debug.WriteLine(cons.Medico.Nome.Equals(nomeMedico));
+                if (novaData >= cons.DataConsulta &&
+                    novaData <= cons.DataConsulta.AddMinutes(30)
+                    && cons.Medico.Nome.Equals(nomeMedico))
+                {
+                    return true;
+                }
+            }
+            
+            return false;
+
+        }
         // GET: Consultas/Edit/5
         public ActionResult Edit(int? id)
         {
