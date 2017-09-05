@@ -104,12 +104,6 @@ namespace Clinica_V3._0.Controllers
         {
             foreach (Consulta cons in db.Consultas)
             {
-                System.Diagnostics.Debug.WriteLine(cons.DataConsulta);
-                System.Diagnostics.Debug.WriteLine(novaData);
-                System.Diagnostics.Debug.WriteLine(cons.DataConsulta.AddMinutes(30));
-                System.Diagnostics.Debug.WriteLine(novaData >= cons.DataConsulta);
-                System.Diagnostics.Debug.WriteLine(novaData <= cons.DataConsulta.AddMinutes(30));
-                System.Diagnostics.Debug.WriteLine(cons.Medico.Nome.Equals(nomeMedico));
                 if (novaData >= cons.DataConsulta &&
                     novaData <= cons.DataConsulta.AddMinutes(30)
                     && cons.Medico.Nome.Equals(nomeMedico))
