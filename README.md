@@ -26,7 +26,14 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 - ~~Trocar a label do medico na Consulta~~
 - ~~Validar consulta com a data~~
 - ~~Mascaras com problemas principalmente a do telefone~~
+
+
 - Adicionar validação na hora da consulta (Consulta)
+- Parte da edição e Detalhes campo médico esta com o ID (Consulta/Edit/Details)
+- Trocar a label de IDPaciente parte edit (Consulta Edit)
+- Details consulta trocar a label do nome para paciente (Consulta Details) 
+- Data de Nascimento Editar paciente esta com o formato HTML... (Paciente/Edit)
+
 
 - O paciente pode desmarcar uma consulta previamente agendada. Caso a consulta seja desmarcada antes de sua data prevista, ela é excluída. Se o paciente não comparecer à consulta, a consulta fica registrada no sistema como sendo uma consulta sem comparecimento. 
 
