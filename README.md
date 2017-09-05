@@ -28,10 +28,10 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 - ~~Mascaras com problemas principalmente a do telefone~~
 
 
-- Adicionar validação na hora da consulta (Consulta)
-- Parte da edição e Detalhes campo médico esta com o ID (Consulta/Edit/Details)
-- Trocar a label de IDPaciente parte edit (Consulta Edit)
-- Details consulta trocar a label do nome para paciente (Consulta Details) 
+- ~~Adicionar validação na hora da consulta (Consulta)~~
+- ~~Parte da edição e Detalhes campo médico esta com o ID (Consulta/Edit/Details)~~
+- ~~Trocar a label de IDPaciente parte edit (Consulta Edit)~~
+- ~~Details consulta trocar a label do nome para paciente (Consulta Details)~~
 - Data de Nascimento Editar paciente esta com o formato HTML... (Paciente/Edit)
 
 

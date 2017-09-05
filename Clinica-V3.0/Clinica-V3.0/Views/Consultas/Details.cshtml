@@ -10,13 +10,6 @@
     <h4>Consulta</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Paciente.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Paciente.Nome)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.PlanoDeSaude)
@@ -35,11 +28,19 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.IDPaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.Nome)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.IDMedico)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IDMedico)
+            @Html.DisplayFor(model => model.Medico.Nome)
         </dd>
 
     </dl>

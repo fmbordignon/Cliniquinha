@@ -128,6 +128,7 @@ namespace Clinica_V3._0.Controllers
                 return HttpNotFound();
             }
             ViewBag.IDPaciente = new SelectList(db.Paciente, "IDPaciente", "Nome", consulta.IDPaciente);
+            ViewBag.IDMedico = new SelectList(db.Medico, "UserId", "Nome", consulta.IDMedico);
             return View(consulta);
         }
 
@@ -145,6 +146,7 @@ namespace Clinica_V3._0.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.IDPaciente = new SelectList(db.Paciente, "IDPaciente", "Nome", consulta.IDPaciente);
+            ViewBag.IDMedico = new SelectList(db.Medico, "UserId", "Nome", consulta.IDMedico);
             return View(consulta);
         }
 
