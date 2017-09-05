@@ -72,7 +72,7 @@ namespace Clinica_V3._0.Controllers
 
             if (hora == "")
             {
-                ModelState.AddModelError("Hora", "Insira uma hora válida");
+                ModelState.AddModelError("hora", "Insira uma hora válida.");
             }
             else
             {
