@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Clinica_V3._0.Models;
+using System.Web.Security;
 
 namespace Clinica_V3._0.Controllers
 {
@@ -146,8 +147,16 @@ namespace Clinica_V3._0.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
-                                           .ToList(), "Name", "Name");
+          if (User.IsInRole("Admin"))
+            {
+                ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            }
+            else
+            {
+                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                                         .ToList(), "Name", "Name");
+            }
+          
             return View();
         }
 
@@ -180,6 +189,15 @@ namespace Clinica_V3._0.Controllers
                         Telefone = model.Telefone,
                         Endereco = model.Endereco
                     };
+                }else if (model.UserRoles.ToLower().Equals("administrador"))
+                {
+                    user.Administrador = new Administrador
+                    {
+                        Nome = model.Nome,
+                        Rg = model.Rg,
+                        Telefone = model.Telefone,
+                        Endereco = model.Endereco
+                    };
                 }
                     var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -194,8 +212,15 @@ namespace Clinica_V3._0.Controllers
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     return RedirectToAction("Index", "Home");
                 }
-                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
-                                         .ToList(), "Name", "Name");
+                if (User.IsInRole("Admin"))
+                {
+                    ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+                }
+                else
+                {
+                    ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                                             .ToList(), "Name", "Name");
+                }
                 AddErrors(result);
             }
 

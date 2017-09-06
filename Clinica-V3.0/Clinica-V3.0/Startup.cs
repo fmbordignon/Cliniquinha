@@ -24,29 +24,28 @@ namespace Clinica_V3._0
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
 
-            // In Startup iam creating first Admin Role and creating a default Admin User    
-            if (!roleManager.RoleExists("Admin"))
+            if (!roleManager.RoleExists("Administrador"))
             {
 
-                // first we create Admin rool   
-                var role = new IdentityRole();
-                role.Name = "Admin";
+                // first we create Admin role   
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Administrador";
                 roleManager.Create(role);
 
-                //Here we create a Admin super user who will maintain the website                  
+                //Here we create a Admin super user who will maintain the website                 
 
                 var user = new ApplicationUser();
-                user.UserName = "UsuarioAdmin";
-                user.Email = "UsuarioAdmin@clinica.com";
+                user.UserName = "admin@admin.com";
+                user.Email = "admin@admin.com";
 
-                string userPWD = "Senha@1";
+                string userPWD = "senha1234";
 
                 var chkUser = UserManager.Create(user, userPWD);
 
-                //Add default User to Role Admin   
+                //Add default User to Role Admin  
                 if (chkUser.Succeeded)
                 {
-                    var result1 = UserManager.AddToRole(user.Id, "Admin");
+                    var result1 = UserManager.AddToRole(user.Id, "Administrador");
 
                 }
             }
