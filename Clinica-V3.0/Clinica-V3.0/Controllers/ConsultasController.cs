@@ -16,7 +16,7 @@ namespace Clinica_V3._0.Controllers
         // GET: Consultas
         public ActionResult Index(string stringPaciente,string stringMedico, string stringPlanoSaude)
         {
-            var consultas = db.Consultas.Include(c => c.Paciente);
+            var consultas = db.Consultas.Where(x=> x.Comparecimento == false).Include(c => c.Paciente);
             if (!String.IsNullOrEmpty(stringPaciente))
             {
                 consultas = consultas.Where(s => s.Paciente.Nome.Contains(stringPaciente));
