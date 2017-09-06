@@ -28,5 +28,6 @@ namespace Clinica_V3._0.Models
         [ForeignKey("Medico")]
         public string IDMedico { get; set; }
         public virtual Medico Medico { get; set; }
+        public bool Comparecimento { get; set; }
     }
 }
