@@ -32,10 +32,10 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 - ~~Parte da edição e Detalhes campo médico esta com o ID (Consulta/Edit/Details)~~
 - ~~Trocar a label de IDPaciente parte edit (Consulta Edit)~~
 - ~~Details consulta trocar a label do nome para paciente (Consulta Details)~~
-- Data de Nascimento Editar paciente esta com o formato HTML... (Paciente/Edit)
+- ~~Data de Nascimento Editar paciente esta com o formato HTML... (Paciente/Edit)~~
 
 
-- O paciente pode desmarcar uma consulta previamente agendada. Caso a consulta seja desmarcada antes de sua data prevista, ela é excluída. Se o paciente não comparecer à consulta, a consulta fica registrada no sistema como sendo uma consulta sem comparecimento. 
+- ~~O paciente pode desmarcar uma consulta previamente agendada. Caso a consulta seja desmarcada antes de sua data prevista, ela é excluída. Se o paciente não comparecer à consulta, a consulta fica registrada no sistema como sendo uma consulta sem comparecimento.~~ 
 
 - Quando um paciente comparece na clínica para ser consultado, caso seja a primeira vez, deve-se completar o cadastro do paciente, informando data de nascimento e endereço. Durante uma consulta, o médico pode registrar observações livremente (p.ex., exames solicitados, resultados, quadro clínico etc.).
 

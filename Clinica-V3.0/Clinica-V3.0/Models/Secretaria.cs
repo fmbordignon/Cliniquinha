@@ -21,6 +21,9 @@ namespace Clinica_V3._0.Models
         [Required]
         [Display(Name = "Endereço")]
         public string Endereco { get; set; }
+
+        [Display(Name = "Especialização")]
+        public string Especializacao { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
     }
 }
