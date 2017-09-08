@@ -40,3 +40,5 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 - Quando um paciente comparece na clínica para ser consultado, caso seja a primeira vez, deve-se completar o cadastro do paciente, informando data de nascimento e endereço. Durante uma consulta, o médico pode registrar observações livremente (p.ex., exames solicitados, resultados, quadro clínico etc.).
 
 - O sistema deverá ter um cadastro de usuários um controle de acesso básico (Login/senha) e para cada tipo de usuário deverá aparecer somente as ações permitidas a ele.
+
+- Gerar a lista dos usuários....
