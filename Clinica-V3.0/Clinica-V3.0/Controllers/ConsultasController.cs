@@ -9,10 +9,11 @@ using System.Data.Entity.Core.Objects;
 
 namespace Clinica_V3._0.Controllers
 {
+
     public class ConsultasController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         // GET: Consultas
         public ActionResult Index(string stringPaciente,string stringMedico, string stringPlanoSaude)
         {
@@ -34,7 +35,7 @@ namespace Clinica_V3._0.Controllers
 
             return View(consultas.ToList());
         }
-
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         // GET: Consultas/Details/5
         public ActionResult Details(int? id)
         {
@@ -49,7 +50,7 @@ namespace Clinica_V3._0.Controllers
             }
             return View(consulta);
         }
-
+        [CustomAuthorize(Roles = "Administrador,Secretaria")]
         // GET: Consultas/Create
         public ActionResult Create()
         {
@@ -61,6 +62,7 @@ namespace Clinica_V3._0.Controllers
         // POST: Consultas/Create
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
+        [CustomAuthorize(Roles = "Administrador,Secretaria")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IDConsulta,PlanoDeSaude,DataConsulta,IDPaciente,IDMedico")] Consulta consulta, string hora)
@@ -115,6 +117,7 @@ namespace Clinica_V3._0.Controllers
             return false;
 
         }
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         // GET: Consultas/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -131,7 +134,7 @@ namespace Clinica_V3._0.Controllers
             ViewBag.IDMedico = new SelectList(db.Medico, "UserId", "Nome", consulta.IDMedico);
             return View(consulta);
         }
-
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         // POST: Consultas/Edit/5
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -151,6 +154,7 @@ namespace Clinica_V3._0.Controllers
         }
 
         // GET: Consultas/Delete/5
+        [CustomAuthorize(Roles = "Administrador,Secretaria")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -164,7 +168,7 @@ namespace Clinica_V3._0.Controllers
             }
             return View(consulta);
         }
-
+        [CustomAuthorize(Roles = "Administrador,Secretaria")]
         // POST: Consultas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
