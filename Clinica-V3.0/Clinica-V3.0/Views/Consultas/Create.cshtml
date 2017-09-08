@@ -1,10 +1,10 @@
 ﻿@model Clinica_V3._0.Models.Consulta
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Criar Consulta";
 }
 
-<h2>Create</h2>
+<h2>Criar Consulta</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Consulta</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -57,14 +56,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Criar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar para Lista de Consultas", "Index")
 </div>
 
 @section Scripts {

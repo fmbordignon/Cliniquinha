@@ -1,13 +1,12 @@
 ﻿@model Clinica_V3._0.Models.Consulta
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes da Consulta";
 }
 
-<h2>Details</h2>
+<h2>Detalhes da Consulta</h2>
 
 <div>
-    <h4>Consulta</h4>
     <hr />
     <dl class="dl-horizontal">
 
@@ -46,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDConsulta }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IDConsulta }) |
+    @Html.ActionLink("Voltar para Lista de Consultas", "Index")
 </p>
