@@ -1,15 +1,14 @@
 ﻿@model Clinica_V3._0.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Registre-se";
+    ViewBag.Title = "Criar Usuário";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 @Styles.Render("~/Content/CssClinica/Register.css")
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "registerFormId" }))
 {
     @Html.AntiForgeryToken()
     HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
-    <h4>Crie uma nova conta.</h4>
     <hr />
 
     <div class="form-group">
@@ -86,7 +85,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Registrar-se" />
+            <input type="submit" class="btn btn-default" value="Criar Usuário" />
         </div>
     </div>
 }
