@@ -41,10 +41,10 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 
 - ~~O sistema deverá ter um cadastro de usuários um controle de acesso básico (Login/senha) e para cada tipo de usuário deverá aparecer somente as ações permitidas a ele.~~
 
-- Criar menu para cada tipo de usuário
+- ~~Criar menu para cada tipo de usuário~~
 
 - ~~Médico da view delete ta com ID no lugar do nome(consulta)~~
 
 - Gerar a lista dos usuários....
 
-- Traduzir as páginas
+- Traduzir as páginas ee arrumar alguns problemas de coesão heheehe
