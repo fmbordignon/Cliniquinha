@@ -41,9 +41,6 @@
                         <input type="submit" value="Efetuar login" class="btn btn-default" />
                     </div>
                 </div>
-                <p>
-                    @Html.ActionLink("Registrar-se como novo usuário", "Register")
-                </p>
                 @* Ativar isso assim que você tiver a confirmação de conta ativada para a funcionalidade de redefinição de senha
                     <p>
                         @Html.ActionLink("Esqueceu sua senha?", "ForgotPassword")
@@ -51,11 +48,7 @@
             }
         </section>
     </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
+
 </div>
 
 @section Scripts {
