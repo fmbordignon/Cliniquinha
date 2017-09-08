@@ -14,7 +14,7 @@ namespace Clinica_V3._0.Controllers
     public class PacientesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        [CustomAuthorize(Roles = "Administrador,Secretaria")]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         // GET: Pacientes
         public ActionResult Index(string stringNome, string stringTelefone)
         {
