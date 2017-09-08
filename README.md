@@ -44,4 +44,7 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 - Criar menu para cada tipo de usuário
 
 - Médico da view delete ta com ID no lugar do nome(consulta)
+
 - Gerar a lista dos usuários....
+
+- Traduzir as páginas
