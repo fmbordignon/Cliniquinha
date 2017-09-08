@@ -101,7 +101,7 @@ namespace Clinica_V3._0.Controllers
 
         //
         // GET: /Account/VerifyCode
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         public async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)
         {
             // Exija que o usuário efetue login via nome de usuário/senha ou login externo
@@ -115,7 +115,7 @@ namespace Clinica_V3._0.Controllers
         //
         // POST: /Account/VerifyCode
         [HttpPost]
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> VerifyCode(VerifyCodeViewModel model)
         {
@@ -144,16 +144,16 @@ namespace Clinica_V3._0.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Administrador,Secretaria")]
         public ActionResult Register()
         {
-          if (User.IsInRole("Admin"))
+          if (User.IsInRole("Administrador"))
             {
                 ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
             }
             else
             {
-                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Administrador"))
                                          .ToList(), "Name", "Name");
             }
           
@@ -163,7 +163,7 @@ namespace Clinica_V3._0.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Administrador,Secretaria")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
@@ -213,13 +213,13 @@ namespace Clinica_V3._0.Controllers
                     
                     return RedirectToAction("Index", "Home");
                 }
-                if (User.IsInRole("Admin"))
+                if (User.IsInRole("Administrador"))
                 {
                     ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
                 }
                 else
                 {
-                    ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                    ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Administrador"))
                                              .ToList(), "Name", "Name");
                 }
                 AddErrors(result);
@@ -231,7 +231,7 @@ namespace Clinica_V3._0.Controllers
 
         //
         // GET: /Account/ConfirmEmail
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
             if (userId == null || code == null)
@@ -244,7 +244,7 @@ namespace Clinica_V3._0.Controllers
 
         //
         // GET: /Account/ForgotPassword
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         public ActionResult ForgotPassword()
         {
             return View();
@@ -253,7 +253,7 @@ namespace Clinica_V3._0.Controllers
         //
         // POST: /Account/ForgotPassword
         [HttpPost]
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
@@ -280,7 +280,7 @@ namespace Clinica_V3._0.Controllers
 
         //
         // GET: /Account/ForgotPasswordConfirmation
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         public ActionResult ForgotPasswordConfirmation()
         {
             return View();
@@ -288,7 +288,7 @@ namespace Clinica_V3._0.Controllers
 
         //
         // GET: /Account/ResetPassword
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         public ActionResult ResetPassword(string code)
         {
             return code == null ? View("Error") : View();
@@ -297,7 +297,7 @@ namespace Clinica_V3._0.Controllers
         //
         // POST: /Account/ResetPassword
         [HttpPost]
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
         {
@@ -322,7 +322,7 @@ namespace Clinica_V3._0.Controllers
 
         //
         // GET: /Account/ResetPasswordConfirmation
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         public ActionResult ResetPasswordConfirmation()
         {
             return View();
@@ -341,7 +341,7 @@ namespace Clinica_V3._0.Controllers
 
         //
         // GET: /Account/SendCode
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
         {
             var userId = await SignInManager.GetVerifiedUserIdAsync();
@@ -357,7 +357,7 @@ namespace Clinica_V3._0.Controllers
         //
         // POST: /Account/SendCode
         [HttpPost]
-        [AllowAnonymous]
+        [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> SendCode(SendCodeViewModel model)
         {
