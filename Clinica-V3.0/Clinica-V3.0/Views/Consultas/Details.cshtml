@@ -1,0 +1,50 @@
+﻿@model Clinica_V3._0.Models.Consulta
+
+@{
+    ViewBag.Title = "Detalhes da Consulta";
+}
+
+<h2>Detalhes da Consulta</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlanoDeSaude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlanoDeSaude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataConsulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataConsulta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDPaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDMedico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medico.Nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IDConsulta }) |
+    @Html.ActionLink("Voltar para Lista de Consultas", "Index")
+</p>

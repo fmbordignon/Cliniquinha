@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Clinica_V3._0.Models.Consulta>
+
+@{
+    ViewBag.Title = "Lista de Consultas";
+}
+
+<h2>Lista de Consultas</h2>
+
+<p>
+    @Html.ActionLink("Criar uma nova Consulta", "Create")
+</p>
+<h4>Buscar por:</h4>
+@using (Html.BeginForm())
+{
+    <p>
+        Paciente: @Html.TextBox("stringPaciente")
+        Médico: @Html.TextBox("stringMedico")
+        Plano de Saúde: @Html.TextBox("stringPlanoSaude")
+        <input type="submit" value="Procurar" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DataConsulta)
+            
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlanoDeSaude)
+        </th>
+        <th>
+            @Html.DisplayName("Paciente")
+        </th>
+        <th>
+            @Html.DisplayName("Médico")
+        </th>
+        <th>
+            @Html.DisplayName("Comparecimento")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataConsulta)
+           
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlanoDeSaude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paciente.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Medico.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comparecimento)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IDConsulta }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IDConsulta }) 
+            @if (!User.IsInRole("Medico"))
+            { <span>|</span>
+             @Html.ActionLink("Deletar", "Delete", new { id = item.IDConsulta })
+            }
+            
+        </td>
+    </tr>
+}
+
+</table>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/ScriptsClinica/Consulta.js")
+}
