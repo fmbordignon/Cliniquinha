@@ -203,7 +203,7 @@ namespace Clinica_V3._0.Controllers
                 if (result.Succeeded)
                 {
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Enviar um email com este link
@@ -509,6 +509,10 @@ namespace Clinica_V3._0.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult AcessoNaoAutorizado()
+        {
+            return View();
+        }
         internal class ChallengeResult : HttpUnauthorizedResult
         {
             public ChallengeResult(string provider, string redirectUri)

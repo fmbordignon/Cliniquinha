@@ -35,9 +35,16 @@ namespace Clinica_V3._0
                 //Here we create a Admin super user who will maintain the website                 
 
                 var user = new ApplicationUser();
+
                 user.UserName = "admin@admin.com";
                 user.Email = "admin@admin.com";
-
+                user.Administrador = new Administrador
+                {
+                    Nome = "administrador",
+                    Endereco = "Endereço Administrador",
+                    Rg = 1212121212,
+                    Telefone = "(51)32123234"                  
+                };
                 string userPWD = "senha1234";
 
                 var chkUser = UserManager.Create(user, userPWD);

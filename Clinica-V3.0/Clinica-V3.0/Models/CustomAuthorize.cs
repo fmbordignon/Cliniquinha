@@ -20,7 +20,7 @@ namespace Clinica_V3._0.Models
             else
             {
                 // Otherwise redirect to your specific authorized area
-                filterContext.Result = new RedirectResult("~/AcessoNaoAutorizado");
+                filterContext.Result = new RedirectResult("~/Account/AcessoNaoAutorizado");
             }
         }
     }

@@ -15,7 +15,7 @@ namespace Clinica_V3._0.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
         // GET: Consultas
-        public ActionResult Index(string stringPaciente,string stringMedico, string stringPlanoSaude)
+        public ActionResult Index(string stringPaciente, string stringMedico, string stringPlanoSaude)
         {
             var consultas = db.Consultas.Where(x=> x.Comparecimento == false).Include(c => c.Paciente);
             if (!String.IsNullOrEmpty(stringPaciente))
