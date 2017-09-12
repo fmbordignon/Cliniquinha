@@ -47,7 +47,7 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 
 - ~~Gerar a lista dos usuários....~~
 
-- Traduzir as páginas ee arrumar alguns problemas de coesão heheehe
+- ~~Traduzir as páginas ee arrumar alguns problemas de coesão heheehe~
 
 - não pode aparecer a página de criar médico e secretária e administrador
 
