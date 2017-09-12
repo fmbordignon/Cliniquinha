@@ -10,114 +10,114 @@ using Clinica_V3._0.Models;
 
 namespace Clinica_V3._0.Controllers
 {
-    [CustomAuthorize(Roles = "Administrador")]
-    public class AdministradoresController : Controller
+    [CustomAuthorize(Roles = "Administrador,Secretaria")]
+    public class MedicosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Administradores
+        // GET: Medicos
         public ActionResult Index(string stringNome)
         {
-            var administradors = db.Administradores.ToList();
+            var medicos = db.Medico.ToList();
             if (!String.IsNullOrEmpty(stringNome))
             {
-                administradors = administradors.Where(s => s.Nome.Contains(stringNome)).ToList();
+                medicos = medicos.Where(s => s.Nome.Contains(stringNome)).ToList();
             }
-            return View(administradors);
+            return View(medicos);
         }
 
-        // GET: Administradores/Details/5
+        // GET: Medicos/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Administrador administrador = db.Administradores.Find(id);
-            if (administrador == null)
+            Medico medico = db.Medico.Find(id);
+            if (medico == null)
             {
                 return HttpNotFound();
             }
-            return View(administrador);
+            return View(medico);
         }
 
-        // GET: Administradores/Create
+        // GET: Medicos/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Administradores/Create
+        // POST: Medicos/Create
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco")] Administrador administrador)
+        public ActionResult Create([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco,Especilizacao")] Medico medico)
         {
             if (ModelState.IsValid)
             {
-                db.Administradores.Add(administrador);
+                db.Medico.Add(medico);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(administrador);
+            return View(medico);
         }
 
-        // GET: Administradores/Edit/5
+        // GET: Medicos/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Administrador administrador = db.Administradores.Find(id);
-            if (administrador == null)
+            Medico medico = db.Medico.Find(id);
+            if (medico == null)
             {
                 return HttpNotFound();
             }
-            //ViewBag.UserId = new SelectList(db.ApplicationUsers, "Id", "Email", administrador.UserId);
-            return View(administrador);
+           
+            return View(medico);
         }
 
-        // POST: Administradores/Edit/5
+        // POST: Medicos/Edit/5
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco")] Administrador administrador)
+        public ActionResult Edit([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco,Especilizacao")] Medico medico)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(administrador).State = EntityState.Modified;
+                db.Entry(medico).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.UserId = new SelectList(db.ApplicationUsers, "Id", "Email", administrador.UserId);
-            return View(administrador);
+            
+            return View(medico);
         }
 
-        // GET: Administradores/Delete/5
+        // GET: Medicos/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Administrador administrador = db.Administradores.Find(id);
-            if (administrador == null)
+            Medico medico = db.Medico.Find(id);
+            if (medico == null)
             {
                 return HttpNotFound();
             }
-            return View(administrador);
+            return View(medico);
         }
 
-        // POST: Administradores/Delete/5
+        // POST: Medicos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Administrador administrador = db.Administradores.Find(id);
-            db.Administradores.Remove(administrador);
+            Medico medico = db.Medico.Find(id);
+            db.Medico.Remove(medico);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -134,7 +134,7 @@ namespace Clinica_V3._0.Controllers
         public ActionResult NomeFilter(string term)
         {
             term = term.ToLower();
-            var list = db.Administradores.Where(x => x.Nome.ToLower().Contains(term)).Select(x => x.Nome).Distinct();
+            var list = db.Medico.Where(x => x.Nome.ToLower().Contains(term)).Select(x => x.Nome).Distinct();
             return Json(list, JsonRequestBehavior.AllowGet);
         }
     }
