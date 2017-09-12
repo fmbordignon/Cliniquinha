@@ -140,7 +140,7 @@ namespace Clinica_V3._0.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDConsulta,PlanoDeSaude,DataConsulta,IDPaciente,IDMedico,Comparecimento")] Consulta consulta)
+        public ActionResult Edit([Bind(Include = "IDConsulta,PlanoDeSaude,DataConsulta,IDPaciente,IDMedico,Comparecimento,Observacoes")] Consulta consulta)
         {
             if (ModelState.IsValid)
             {

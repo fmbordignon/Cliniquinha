@@ -29,5 +29,7 @@ namespace Clinica_V3._0.Models
         public string IDMedico { get; set; }
         public virtual Medico Medico { get; set; }
         public bool Comparecimento { get; set; }
+        [DisplayName("Observações")]
+        public string Observacoes { get; set; }
     }
 }

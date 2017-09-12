@@ -59,6 +59,17 @@
             </div>
         </div>
 
+        @if (User.IsInRole("Medico"))
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.Observacoes, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Observacoes, new { rows = 10, cols = 40 })
+                </div>
+            </div>
+        }
+
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Salvar" class="btn btn-default" />
