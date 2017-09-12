@@ -41,28 +41,6 @@ namespace Clinica_V3._0.Controllers
             return View(medico);
         }
 
-        // GET: Medicos/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Medicos/Create
-        // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
-        // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco,Especilizacao")] Medico medico)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Medico.Add(medico);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(medico);
-        }
-
         // GET: Medicos/Edit/5
         public ActionResult Edit(string id)
         {

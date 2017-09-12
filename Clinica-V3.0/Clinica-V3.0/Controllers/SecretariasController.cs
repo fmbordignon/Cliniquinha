@@ -42,28 +42,6 @@ namespace Clinica_V3._0.Controllers
             return View(secretaria);
         }
 
-        // GET: Secretarias/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Secretarias/Create
-        // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
-        // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco")] Secretaria secretaria)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Secretaria.Add(secretaria);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(secretaria);
-        }
-
         // GET: Secretarias/Edit/5
         public ActionResult Edit(string id)
         {

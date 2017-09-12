@@ -41,28 +41,6 @@ namespace Clinica_V3._0.Controllers
             return View(administrador);
         }
 
-        // GET: Administradores/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Administradores/Create
-        // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
-        // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco")] Administrador administrador)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Administradores.Add(administrador);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(administrador);
-        }
-
         // GET: Administradores/Edit/5
         public ActionResult Edit(string id)
         {
