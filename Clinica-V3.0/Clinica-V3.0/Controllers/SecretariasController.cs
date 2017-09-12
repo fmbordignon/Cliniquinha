@@ -94,6 +94,8 @@ namespace Clinica_V3._0.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             Secretaria secretaria = db.Secretaria.Find(id);
+            ApplicationUser user = db.Users.Find(secretaria.UserId);
+            db.Users.Remove(user);
             db.Secretaria.Remove(secretaria);
             db.SaveChanges();
             return RedirectToAction("Index");

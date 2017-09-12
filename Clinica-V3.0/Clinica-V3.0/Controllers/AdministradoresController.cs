@@ -95,7 +95,10 @@ namespace Clinica_V3._0.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             Administrador administrador = db.Administradores.Find(id);
+            ApplicationUser user = db.Users.Find(administrador.UserId);
+            db.Users.Remove(user);
             db.Administradores.Remove(administrador);
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }

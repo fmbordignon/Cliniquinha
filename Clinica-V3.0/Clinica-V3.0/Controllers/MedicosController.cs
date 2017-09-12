@@ -16,9 +16,15 @@ namespace Clinica_V3._0.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Medicos
-        public ActionResult Index(string stringNome)
+        public ActionResult Index(string stringNome, string stringEspecializacao)
         {
             var medicos = db.Medico.ToList();
+
+            if (!String.IsNullOrEmpty(stringEspecializacao))
+            {
+                medicos = medicos.Where(s => s.Especilizacao.Contains(stringEspecializacao)).ToList();
+            }
+
             if (!String.IsNullOrEmpty(stringNome))
             {
                 medicos = medicos.Where(s => s.Nome.Contains(stringNome)).ToList();
@@ -95,6 +101,8 @@ namespace Clinica_V3._0.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             Medico medico = db.Medico.Find(id);
+            ApplicationUser user = db.Users.Find(medico.UserId);
+            db.Users.Remove(user);
             db.Medico.Remove(medico);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -113,6 +121,13 @@ namespace Clinica_V3._0.Controllers
         {
             term = term.ToLower();
             var list = db.Medico.Where(x => x.Nome.ToLower().Contains(term)).Select(x => x.Nome).Distinct();
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult EspecializacaoFilter(string term)
+        {
+            term = term.ToLower();
+            var list = db.Medico.Where(x => x.Especilizacao.ToLower().Contains(term)).Select(x => x.Especilizacao).Distinct();
             return Json(list, JsonRequestBehavior.AllowGet);
         }
     }
