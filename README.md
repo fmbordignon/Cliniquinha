@@ -45,6 +45,6 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 
 - ~~Médico da view delete ta com ID no lugar do nome(consulta)~~
 
-- Gerar a lista dos usuários....
+- ~~Gerar a lista dos usuários....~~
 
 - Traduzir as páginas ee arrumar alguns problemas de coesão heheehe
