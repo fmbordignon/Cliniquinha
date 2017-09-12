@@ -37,7 +37,7 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 
 - ~~O paciente pode desmarcar uma consulta previamente agendada. Caso a consulta seja desmarcada antes de sua data prevista, ela é excluída. Se o paciente não comparecer à consulta, a consulta fica registrada no sistema como sendo uma consulta sem comparecimento.~~ 
 
-- Quando um paciente comparece na clínica para ser consultado, caso seja a primeira vez, deve-se completar o cadastro do paciente, informando data de nascimento e endereço. Durante uma consulta, o médico pode registrar observações livremente (p.ex., exames solicitados, resultados, quadro clínico etc.).
+- ~~Quando um paciente comparece na clínica para ser consultado, caso seja a primeira vez, deve-se completar o cadastro do paciente, informando data de nascimento e endereço.~~ Durante uma consulta, o médico pode registrar observações livremente (p.ex., exames solicitados, resultados, quadro clínico etc.).
 
 - ~~O sistema deverá ter um cadastro de usuários um controle de acesso básico (Login/senha) e para cada tipo de usuário deverá aparecer somente as ações permitidas a ele.~~
 
