@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Clinica_V3._0.Models.Paciente>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista de Pacientes";
 }
 
-<h2>Index</h2>
+<h2>Lista de Pacientes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Criar um novo Paciente", "Create")
 </p>
 <h4>Buscar por:</h4>
 @using (Html.BeginForm())
@@ -50,9 +50,9 @@
             @Html.DisplayFor(modelItem => item.DataNascimento)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDPaciente }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDPaciente }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDPaciente })
+            @Html.ActionLink("Editar", "Edit", new { id=item.IDPaciente }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IDPaciente }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.IDPaciente })
         </td>
     </tr>
 }

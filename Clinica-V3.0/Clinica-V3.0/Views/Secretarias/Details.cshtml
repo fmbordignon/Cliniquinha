@@ -1,13 +1,12 @@
 ﻿@model Clinica_V3._0.Models.Secretaria
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes da Secretária";
 }
 
-<h2>Details</h2>
+<h2>Detalhes da Secretária</h2>
 
 <div>
-    <h4>Secretaria</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -42,17 +41,9 @@
             @Html.DisplayFor(model => model.Endereco)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Especializacao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Especializacao)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.UserId }) |
+    @Html.ActionLink("Voltar para lista de Secretárias", "Index")
 </p>

@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Clinica_V3._0.Models.Secretaria>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista de Secretárias";
 }
 
-<h2>Index</h2>
+<h2>Lista de Secretárias</h2>
 <h4>Buscar por:</h4>
 @using (Html.BeginForm())
 {
@@ -27,9 +27,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Endereco)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Especializacao)
-        </th>
         <th></th>
     </tr>
 
@@ -48,12 +45,9 @@
             @Html.DisplayFor(modelItem => item.Endereco)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Especializacao)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+            @Html.ActionLink("Editar", "Edit", new { id=item.UserId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.UserId }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.UserId })
         </td>
     </tr>
 }

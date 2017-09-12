@@ -53,7 +53,7 @@ namespace Clinica_V3._0.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco,Especializacao")] Secretaria secretaria)
+        public ActionResult Create([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco")] Secretaria secretaria)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +84,7 @@ namespace Clinica_V3._0.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco,Especializacao")] Secretaria secretaria)
+        public ActionResult Edit([Bind(Include = "UserId,Nome,Rg,Telefone,Endereco")] Secretaria secretaria)
         {
             if (ModelState.IsValid)
             {

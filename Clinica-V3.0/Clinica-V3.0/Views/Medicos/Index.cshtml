@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Clinica_V3._0.Models.Medico>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista de Médicos";
 }
 
-<h2>Index</h2>
+<h2>Lista de Médicos</h2>
 
 <h4>Buscar por:</h4>
 @using (Html.BeginForm())
@@ -52,9 +52,9 @@
             @Html.DisplayFor(modelItem => item.Especilizacao)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+            @Html.ActionLink("Editar", "Edit", new { id=item.UserId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.UserId }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.UserId })
         </td>
     </tr>
 }

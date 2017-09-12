@@ -1,12 +1,12 @@
 ﻿@model Clinica_V3._0.Models.Medico
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Deletar Médico";
 }
 
-<h2>Delete</h2>
+<h2>Deletar Médico</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Você deseja mesmo deletar este Médico?</h3>
 <div>
     <h4>Medico</h4>
     <hr />
@@ -58,8 +58,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Lista de Médicos", "Index")
         </div>
     }
 </div>

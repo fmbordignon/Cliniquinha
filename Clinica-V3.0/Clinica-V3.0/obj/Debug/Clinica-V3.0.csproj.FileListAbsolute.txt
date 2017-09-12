@@ -223,3 +223,4 @@ C:\Users\Pichau\Desktop\Cliniquinha\Clinica-V3.0\Clinica-V3.0\bin\pt-br\Microsof
 C:\Users\Pichau\Desktop\Cliniquinha\Clinica-V3.0\Clinica-V3.0\bin\pt-br\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\Pichau\Desktop\Cliniquinha\Clinica-V3.0\Clinica-V3.0\bin\pt-br\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\Pichau\Desktop\Cliniquinha\Clinica-V3.0\Clinica-V3.0\bin\pt-br\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\vcerutti\Desktop\Cliniquinha\Clinica-V3.0\Clinica-V3.0\obj\Debug\Clinica-V3.0.csprojResolveAssemblyReference.cache

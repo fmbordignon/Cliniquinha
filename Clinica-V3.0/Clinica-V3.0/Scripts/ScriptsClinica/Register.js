@@ -30,7 +30,7 @@
                 'Especializacao': {  
                     required: {
                         depends: function () {
-                            return ($("#UserRoles").val() == "Medico");
+                            return ($("#UserRoles").val() === "Medico");
                         }
                     }
                 },
