@@ -49,6 +49,6 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 
 - ~~Traduzir as páginas ee arrumar alguns problemas de coesão heheehe~
 
-- não pode aparecer a página de criar médico e secretária e administrador
+- ~~não pode aparecer a página de criar médico e secretária e administrador~~ 
 
 - Tem que aparecer a opção de trocar a senha no Edit.
