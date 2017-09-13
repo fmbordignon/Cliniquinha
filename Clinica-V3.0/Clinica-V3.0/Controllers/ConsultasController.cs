@@ -6,6 +6,7 @@ using System.Net;
 using System.Web.Mvc;
 using Clinica_V3._0.Models;
 using System.Data.Entity.Core.Objects;
+using Microsoft.AspNet.Identity;
 
 namespace Clinica_V3._0.Controllers
 {
@@ -17,8 +18,14 @@ namespace Clinica_V3._0.Controllers
         // GET: Consultas
         public ActionResult Index(string stringPaciente, string stringMedico, string stringPlanoSaude)
         {
-            var consultas = db.Consultas.Where(x=> x.Comparecimento == false).Include(c => c.Paciente);
-            if (!String.IsNullOrEmpty(stringPaciente))
+            var consultas = db.Consultas.Where(x => x.Comparecimento == false).Include(c => c.Paciente);
+            var user = db.Users.Find(User.Identity.GetUserId());
+            if (User.IsInRole("Medico"))
+            {
+                consultas = consultas.Where(s => s.Medico.Nome.Contains(user.Medico.Nome));
+            }
+
+                if (!String.IsNullOrEmpty(stringPaciente))
             {
                 consultas = consultas.Where(s => s.Paciente.Nome.Contains(stringPaciente));
             }

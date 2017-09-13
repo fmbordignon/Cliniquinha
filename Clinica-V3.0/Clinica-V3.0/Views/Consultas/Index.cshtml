@@ -5,10 +5,12 @@
 }
 
 <h2>Lista de Consultas</h2>
-
+@if (!User.IsInRole("Medico"))
+{
 <p>
     @Html.ActionLink("Criar uma nova Consulta", "Create")
 </p>
+}
 <h4>Buscar por:</h4>
 @using (Html.BeginForm())
 {
@@ -59,7 +61,7 @@
             @Html.DisplayFor(modelItem => item.Comparecimento)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IDConsulta }) |
+            @Html.ActionLink("Editar", "Edit", new { id = item.IDConsulta }) |
             @Html.ActionLink("Detalhes", "Details", new { id=item.IDConsulta }) 
             @if (!User.IsInRole("Medico"))
             { <span>|</span>
