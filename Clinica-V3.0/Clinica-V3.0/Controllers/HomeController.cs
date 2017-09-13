@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Clinica_V3._0.Controllers
 {
+    [CustomAuthorize(Roles = "Medico,Administrador,Secretaria")]
     public class HomeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
