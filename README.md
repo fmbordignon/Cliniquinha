@@ -51,4 +51,11 @@ https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 
 - ~~não pode aparecer a página de criar médico e secretária e administrador~~ 
 
-- Tem que aparecer a opção de trocar a senha no Edit.
+- ~~Tem que aparecer a opção de trocar a senha no Edit.~~ 
+
+- remover criar um novo Paciente para médico e consultas
+
+- remover a opção de Editar Paciente médico
+
+- Por filtro da consulta para o mesmo médico
+
