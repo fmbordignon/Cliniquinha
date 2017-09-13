@@ -3,11 +3,15 @@
 @{
     ViewBag.Title = "Efetuar login";
 }
+@Styles.Render("~/Content/CssClinica/Login.css")
 
-<h2>@ViewBag.Title.</h2>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 ">
+        <img src="@Url.Content("~/Content/Imagens/medicos.jpg")" alt="Image" id="id-medico" />
+    </div>
+    <div class="col-md-4">
         <section id="loginForm">
+            <h2>@ViewBag.Title.</h2>
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
