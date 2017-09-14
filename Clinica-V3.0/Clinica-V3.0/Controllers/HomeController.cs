@@ -13,6 +13,10 @@ namespace Clinica_V3._0.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
+            if (User.IsInRole("Administrador"))
+            {
+                return adminHomePage();
+            }
             ViewBag.numConsultasHoje = numConsultaHoje();
             ViewBag.totalConsultas = db.Consultas.Count();
             ViewBag.totalPacientes = db.Paciente.Count();
@@ -45,6 +49,16 @@ namespace Clinica_V3._0.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult adminHomePage()
+        {
+            ViewBag.totalUsuarios = db.Users.Where(x=> x.Administrador == null).Count();
+            ViewBag.totalConsultas = db.Consultas.Count();
+            ViewBag.totalPacientes = db.Paciente.Count();
+            ViewBag.totalSecretaria = db.Secretaria.Count();
+            ViewBag.totalMedicos = db.Medico.Count();
+            return View("adminHomePage");
         }
     }
 }
