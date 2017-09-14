@@ -19,7 +19,7 @@ namespace Clinica_V3._0.Models
         [Display(Name = "Endereço")]
         public string Endereco { get; set; }
         [Display(Name = "Data de nascimento")]
-        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DataNascimento { get; set; }
         public List<Consulta> ListaConsultas { get; set; }
     }
