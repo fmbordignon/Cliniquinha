@@ -9,7 +9,7 @@
   
     Inputmask({ regex: "\^\[0-9]{10}\$" }).mask("#Rg");
 
-
-
+    Inputmask({ regex: "[a-zA-Z\u00C0-\u00FF ]+" }).mask("#Nome");
+    $("#Nome, #PlanoDeSaude, #Rg").inputmask({ "placeholder": "" });
 
 });
