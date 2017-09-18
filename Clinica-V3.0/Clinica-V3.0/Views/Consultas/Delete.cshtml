@@ -1,0 +1,55 @@
+﻿@model Clinica_V3._0.Models.Consulta
+
+@{
+    ViewBag.Title = "Deletar Consulta";
+}
+
+<h2>Deletar Consulta</h2>
+
+<h3>Você deseja mesmo deletar esta consulta?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlanoDeSaude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlanoDeSaude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataConsulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataConsulta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDMedico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medico.Nome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Lista de Consultas", "Index")
+        </div>
+    }
+</div>
